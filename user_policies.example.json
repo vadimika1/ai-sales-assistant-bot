@@ -1,0 +1,6 @@
+{
+  "banned_user_ids": [],
+  "daily_token_limit_overrides": {
+    "777": 1200
+  }
+}

@@ -1,0 +1,5 @@
+# Ежедневный backup PostgreSQL в 03:30 UTC
+30 3 * * * cd /opt/ai-sales-assistant-bot && /bin/bash scripts/ops/postgres_backup.sh >> /var/log/ai-sales-backup.log 2>&1
+
+# Мониторинг стека каждую минуту (health/containers/cpu/mem + alerts)
+* * * * * cd /opt/ai-sales-assistant-bot && /usr/bin/python3 scripts/ops/monitor_stack.py >> /var/log/ai-sales-monitor.log 2>&1

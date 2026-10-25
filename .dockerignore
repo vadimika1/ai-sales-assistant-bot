@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+.pytest_cache
+.ruff_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
+ai_sales_assistant_bot.egg-info
+tests
+*.log

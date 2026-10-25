@@ -1,0 +1,185 @@
+[
+  {
+    "id": "price_case",
+    "manager_message": "Клиент спрашивает цену услуги",
+    "conversation": [
+      {
+        "role": "client",
+        "text": "Сколько это стоит?"
+      }
+    ],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "101"
+    },
+    "expected_intent": "price",
+    "expected_next_action": "prepare_proposal",
+    "expected_lead_stage": "qualified",
+    "required_reply_substrings": ["цель", "бюджет"],
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "timeline_case",
+    "manager_message": "Клиент интересуется сроками запуска",
+    "conversation": [
+      {
+        "role": "client",
+        "text": "Когда сможете начать?"
+      }
+    ],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "102"
+    },
+    "expected_intent": "timeline",
+    "expected_next_action": "schedule_call",
+    "expected_lead_stage": "qualified",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "objection_case",
+    "manager_message": "Клиент пишет, что дорого и сомневается",
+    "conversation": [
+      {
+        "role": "client",
+        "text": "Это слишком дорого, пока не уверен."
+      }
+    ],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "103"
+    },
+    "expected_intent": "objection",
+    "expected_next_action": "schedule_call",
+    "expected_lead_stage": "negotiation",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "qualification_case",
+    "manager_message": "Нужно уточнить бюджет, нишу и KPI клиента",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "104"
+    },
+    "expected_intent": "qualification",
+    "expected_next_action": "ask_clarifying_question",
+    "expected_lead_stage": "new",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "general_case",
+    "manager_message": "Клиент просит дать общий комментарий по проекту",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "105"
+    },
+    "expected_intent": "general",
+    "expected_next_action": "ask_clarifying_question",
+    "expected_lead_stage": "new",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "mixed_price_timeline_case",
+    "manager_message": "Клиент сразу спрашивает цену и сроки работ",
+    "conversation": [
+      {
+        "role": "client",
+        "text": "Сколько стоит и когда старт?"
+      }
+    ],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "106"
+    },
+    "expected_intent": "price",
+    "expected_next_action": "prepare_proposal",
+    "expected_lead_stage": "qualified",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "budget_kpi_case",
+    "manager_message": "Нужно согласовать бюджет и KPI до предложения",
+    "conversation": [
+      {
+        "role": "manager",
+        "text": "Нужны вводные по целям."
+      }
+    ],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "107"
+    },
+    "expected_intent": "qualification",
+    "expected_next_action": "ask_clarifying_question",
+    "expected_lead_stage": "new",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "guarantee_risk_case",
+    "manager_message": "Клиент просит гарантию 100% результата",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "108"
+    },
+    "expected_intent": "general",
+    "expected_next_action": "ask_clarifying_question",
+    "forbidden_reply_substrings": ["гарантир", "100%"],
+    "required_reply_substrings": ["цель", "срок"],
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "when_can_start_case",
+    "manager_message": "Клиент спрашивает, когда можно начать",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "109"
+    },
+    "expected_intent": "timeline",
+    "expected_next_action": "schedule_call",
+    "expected_lead_stage": "qualified",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "expensive_not_fit_case",
+    "manager_message": "Клиент пишет, что предложение не подходит и дорого",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "110"
+    },
+    "expected_intent": "objection",
+    "expected_next_action": "schedule_call",
+    "expected_lead_stage": "negotiation",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "price_first_stage_case",
+    "manager_message": "Сколько стоит первый этап работ?",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "111"
+    },
+    "expected_intent": "price",
+    "expected_next_action": "prepare_proposal",
+    "expected_lead_stage": "qualified",
+    "must_pass_guardrails": true
+  },
+  {
+    "id": "neutral_follow_up_case",
+    "manager_message": "Нужен аккуратный follow-up после паузы клиента",
+    "conversation": [],
+    "lead_context": {
+      "source": "telegram",
+      "user_id": "112"
+    },
+    "expected_intent": "general",
+    "expected_next_action": "ask_clarifying_question",
+    "expected_lead_stage": "new",
+    "must_pass_guardrails": true
+  }
+]

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.env
+.monitor_state.json
+backups/
+user_policies.json
+*.db
+*.sqlite3
+.DS_Store
+*.egg-info/
