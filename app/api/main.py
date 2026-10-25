@@ -1,7 +1,7 @@
 import logging
 
-from fastapi import FastAPI
 import uvicorn
+from fastapi import FastAPI
 
 from app.api.errors import register_exception_handlers
 from app.api.middleware.request_id import RequestIdMiddleware

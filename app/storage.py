@@ -1,14 +1,14 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta
 import json
+from datetime import datetime, timedelta
 from typing import Any
 
 from sqlalchemy import func, inspect, select, text
 
 from app.ai.tokens import extract_request_user_id
 from app.db import get_engine, normalize_database_url, session_scope
-from app.models import AISuggestionModel, AIFeedbackModel, Base, CRMSyncLogModel
+from app.models import AIFeedbackModel, AISuggestionModel, Base, CRMSyncLogModel
 from app.schemas import AIFeedbackRequest, AISuggestionRequest, AISuggestionResponse
 
 

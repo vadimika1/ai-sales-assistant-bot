@@ -3,6 +3,7 @@ import logging
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlalchemy.exc import SQLAlchemyError
 
+from app.ai.prompts import SYSTEM_PROMPT
 from app.ai.service import AIServiceError, AssistantService
 from app.ai.tokens import estimate_request_total_tokens, extract_request_user_id
 from app.api.deps import (
@@ -15,7 +16,6 @@ from app.api.deps import (
     verify_service_token,
 )
 from app.api.rate_limit import InMemoryRateLimiter
-from app.ai.prompts import SYSTEM_PROMPT
 from app.config import get_settings
 from app.crm.sync import CRMSyncResult, CRMSyncService
 from app.schemas import (

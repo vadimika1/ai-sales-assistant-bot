@@ -7,7 +7,6 @@ import httpx
 
 from app.schemas import AIFeedbackResponse, AISuggestionResponse
 
-
 logger = logging.getLogger(__name__)
 
 

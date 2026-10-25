@@ -5,8 +5,8 @@ from fastapi.testclient import TestClient
 from app.api.deps import (
     get_ai_service,
     get_crm_sync_service,
-    get_feedback_store,
     get_feedback_rate_limiter,
+    get_feedback_store,
     get_suggest_rate_limiter,
     get_user_policies_provider,
 )

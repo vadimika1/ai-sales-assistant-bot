@@ -1,11 +1,11 @@
-from functools import lru_cache
 import hmac
+from functools import lru_cache
 from typing import Annotated, Optional
 
 from fastapi import Header, HTTPException
 
-from app.api.rate_limit import InMemoryRateLimiter
 from app.ai.service import AssistantService, MockAssistantService, OpenAIAssistantService
+from app.api.rate_limit import InMemoryRateLimiter
 from app.config import get_settings
 from app.crm.sync import CRMSyncService, HttpCRMSyncService, NoopCRMSyncService
 from app.rag.retriever import SimpleRAGRetriever

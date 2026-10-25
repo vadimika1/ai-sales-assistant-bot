@@ -2,8 +2,8 @@
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 import sys
+from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
 from alembic import command

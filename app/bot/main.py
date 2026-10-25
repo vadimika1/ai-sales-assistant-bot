@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import asyncio
-from contextlib import suppress
 import logging
+from contextlib import suppress
 from functools import lru_cache
 from typing import cast
 from urllib.parse import urlsplit
@@ -20,8 +20,8 @@ from app.bot.client import AssistantApiClient, AssistantApiClientError
 from app.bot.pending_edits import PendingEditsStore
 from app.bot.user_locales import (
     DEFAULT_BOT_LOCALE,
-    BotLocale,
     SUPPORTED_BOT_LOCALES,
+    BotLocale,
     UserLocalesStore,
 )
 from app.config import Settings, get_settings
